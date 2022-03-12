@@ -10,7 +10,7 @@ class FilesystemDisplay {
         this._formatBytes = (a,b) => {if(0==a)return"0 Bytes";var c=1024,d=b||2,e=["Bytes","KB","MB","GB","TB","PB","EB","ZB","YB"],f=Math.floor(Math.log(a)/Math.log(c));return parseFloat((a/Math.pow(c,f)).toFixed(d))+" "+e[f]};
         this.fileIconsMatcher = require("./assets/misc/file-icons-match.js");
         this.icons = require("./assets/icons/file-icons.json");
-        this.edexIcons = {
+        this.eEDEXIcons = {
             theme: {
                 width: 24,
                 height: 24,
@@ -204,8 +204,8 @@ class FilesystemDisplay {
                             e.category = "dir";
                             e.type = "dir";
                         }
-                        if (e.category === "dir" && tcwd === settingsDir && file === "themes") e.type="edex-themesDir";
-                        if (e.category === "dir" && tcwd === settingsDir && file === "keyboards") e.type = "edex-kblayoutsDir";
+                        if (e.category === "dir" && tcwd === settingsDir && file === "themes") e.type="eEDEX-themesDir";
+                        if (e.category === "dir" && tcwd === settingsDir && file === "keyboards") e.type = "eEDEX-kblayoutsDir";
 
                         if (fstat.isSymbolicLink()) {
                             e.category = "symlink";
@@ -222,10 +222,10 @@ class FilesystemDisplay {
                         e.hidden = true;
                     }
 
-                    if (e.category === "file" && tcwd === themesDir && file.endsWith(".json")) e.type = "edex-theme";
-                    if (e.category === "file" && tcwd === keyboardsDir && file.endsWith(".json")) e.type = "edex-kblayout";
-                    if (e.category === "file" && tcwd === settingsDir && file === "settings.json") e.type = "edex-settings";
-                    if (e.category === "file" && tcwd === settingsDir && file === "shortcuts.json") e.type = "edex-shortcuts";
+                    if (e.category === "file" && tcwd === themesDir && file.endsWith(".json")) e.type = "eEDEX-theme";
+                    if (e.category === "file" && tcwd === keyboardsDir && file.endsWith(".json")) e.type = "eEDEX-kblayout";
+                    if (e.category === "file" && tcwd === settingsDir && file === "settings.json") e.type = "eEDEX-settings";
+                    if (e.category === "file" && tcwd === settingsDir && file === "shortcuts.json") e.type = "eEDEX-shortcuts";
 
                     if (file.startsWith(".")) e.hidden = true;
 
@@ -366,16 +366,16 @@ class FilesystemDisplay {
                     cmdSuffix = '';
                 }
 
-                if (e.type === "edex-theme") {
+                if (e.type === "eEDEX-theme") {
                     cmd = `window.themeChanger("${e.name.slice(0, -5)}")`;
                 }
-                if (e.type === "edex-kblayout") {
+                if (e.type === "eEDEX-kblayout") {
                     cmd = `window.remakeKeyboard("${e.name.slice(0, -5)}")`;
                 }
-                if (e.type === "edex-settings") {
+                if (e.type === "eEDEX-settings") {
                     cmd = `window.openSettings()`;
                 }
-                if (e.type === "edex-shortcuts") {
+                if (e.type === "eEDEX-shortcuts") {
                     cmd = `window.openShortcutsHelp()`;
                 }
 
@@ -404,29 +404,29 @@ class FilesystemDisplay {
                     case "usb":
                         icon = this.icons.usb;
                         break;
-                    case "edex-theme":
-                        icon = this.edexIcons.theme;
-                        type = "eDEX-UI theme";
+                    case "eEDEX-theme":
+                        icon = this.eEDEXIcons.theme;
+                        type = "eEDEX-UI theme";
                         break;
-                    case "edex-kblayout":
-                        icon = this.edexIcons.kblayout;
-                        type = "eDEX-UI keyboard layout";
+                    case "eEDEX-kblayout":
+                        icon = this.eEDEXIcons.kblayout;
+                        type = "eEDEX-UI keyboard layout";
                         break;
-                    case "edex-settings":
-                    case "edex-shortcuts":
-                        icon = this.edexIcons.settings;
-                        type = "eDEX-UI config file";
+                    case "eEDEX-settings":
+                    case "eEDEX-shortcuts":
+                        icon = this.eEDEXIcons.settings;
+                        type = "eEDEX-UI config file";
                         break;
                     case "system":
-                        icon = this.edexIcons.settings;
+                        icon = this.eEDEXIcons.settings;
                         break;
-                    case "edex-themesDir":
-                        icon = this.edexIcons.themesDir;
-                        type = "eDEX-UI themes folder";
+                    case "eEDEX-themesDir":
+                        icon = this.eEDEXIcons.themesDir;
+                        type = "eEDEX-UI themes folder";
                         break;
-                    case "edex-kblayoutsDir":
-                        icon = this.edexIcons.kblayoutsDir;
-                        type = "eDEX-UI keyboards folder";
+                    case "eEDEX-kblayoutsDir":
+                        icon = this.eEDEXIcons.kblayoutsDir;
+                        type = "eEDEX-UI keyboards folder";
                         break;
                     default:
                         let iconName = this.fileIconsMatcher(e.name);

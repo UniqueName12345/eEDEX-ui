@@ -80,7 +80,7 @@ div#fs_disp_container > * > svg {
     width: 5vh;
 }
 
-/* Add padding around non-edex icons */
+/* Add padding around non-eEDEX icons */
 div#fs_disp_container > * > svg:not([viewBox="0 0 24 24"]) {
     padding: 0.5vh;
     box-sizing: border-box;

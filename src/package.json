@@ -1,8 +1,8 @@
 {
-  "name": "edex-ui",
-  "productName": "eDEX-UI",
+  "name": "eEDEX-ui",
+  "productName": "eEDEX-UI",
   "version": "2.2.8",
-  "description": "eDEX-UI sci-fi interface",
+  "description": "eEDEX-UI sci-fi interface",
   "keywords": [
     "desktop",
     "sci-fi",
@@ -14,14 +14,14 @@
   "main": "_boot.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GitSquared/edex-ui.git"
+    "url": "git+https://github.com/GitSquared/eEDEX-ui.git"
   },
   "author": "Gabriel 'Squared' SAILLARD <gabriel@saillard.dev> (https://gaby.dev)",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/GitSquared/edex-ui/issues"
+    "url": "https://github.com/GitSquared/eEDEX-ui/issues"
   },
-  "homepage": "https://github.com/GitSquared/edex-ui#readme",
+  "homepage": "https://github.com/GitSquared/eEDEX-ui#readme",
   "dependencies": {
     "@electron/remote": "^1.2.2",
     "augmented-ui": "^1.1.2",
